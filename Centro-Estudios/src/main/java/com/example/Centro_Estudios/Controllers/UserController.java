@@ -24,4 +24,5 @@ public class UserController {
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("{Errir: No se pudo insertar el usuario}");
         }
     }
+
 }
