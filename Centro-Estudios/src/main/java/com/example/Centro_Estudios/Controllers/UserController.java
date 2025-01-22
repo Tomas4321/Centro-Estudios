@@ -3,6 +3,7 @@ package com.example.Centro_Estudios.Controllers;
 import com.example.Centro_Estudios.Dtos.UserDTO;
 import com.example.Centro_Estudios.Entities.User;
 import com.example.Centro_Estudios.Serivices.UserService;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +18,7 @@ public class UserController {
     private UserService userService;
 
     @PostMapping("")
-    public ResponseEntity<?> addUser(@RequestBody UserDTO user) {
+    public ResponseEntity<?> addUser(@Valid @RequestBody UserDTO user) {
         try {
             return ResponseEntity.status(HttpStatus.OK).body(this.userService.addUser(user));
         } catch (Exception e) {
