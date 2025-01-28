@@ -17,6 +17,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @PostMapping("")
     public ResponseEntity<?> addUser(@Valid @RequestBody UserDTO user) {
         try {
